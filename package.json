@@ -1,0 +1,17 @@
+{
+  "name": "ChatServer",
+  "version": "0.1.0",
+  "description": "a socket io Api for an android chat app...",
+  "main": "index.js",
+  "repository": "https://github.com/geeksesi/ChatServer.git",
+  "author": "mohammad javad ghasemy <wowkhanmoghol66@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.5.4",
+    "password-hash": "^1.2.2",
+    "socket.io": "^2.2.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
