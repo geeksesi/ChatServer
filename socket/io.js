@@ -40,6 +40,7 @@ module.exports = function listen(io, socket)
             // console.log(user);
             if(passwordHash.verify(password, user.password))
             {
+                socket.join('auth');
                 cb(true);
             }
             else{
