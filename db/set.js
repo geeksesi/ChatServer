@@ -1,13 +1,14 @@
-const mongo        = require('mongoose');
-const db_module    = require('./module');
-const passwordHash = require('password-hash');
+const mongo           = require('mongoose');
+const {Message, User} = require('./module');
+const passwordHash    = require('password-hash');
 
-function add_user(name, user_name, password, profile, cb)
+function add_user(name, username, email, password, profile, cb)
 {
-    const add_user = new db_module.userModule({
-        _id      : new mongo.Types.ObjectId(),
+    const add_user = new User({
+        // _id      : new mongo.Types.ObjectId(),
         name     : name,
-        user_name: user_name,
+        username: username,
+        email    : email,
         password : passwordHash.generate(password),
         profile  : profile,
         timestamp: Math.floor(Date.now() / 1000),
@@ -24,8 +25,8 @@ function add_user(name, user_name, password, profile, cb)
 
 function add_message(user_id, message, cb)
 {
-    const add_message = new db_module.messageModule({
-        _id      : new mongo.Types.ObjectId(),
+    const add_message = new Message({
+        // _id      : new mongo.Types.ObjectId(),
         user_id  : user_id,
         message  : message,
         timestamp: Math.floor(Date.now() / 1000),
